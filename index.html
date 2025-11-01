@@ -1,0 +1,1140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.7px Arial; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.7px Arial; -webkit-text-stroke: #000000; min-height: 16.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;B2 First Writing Practice&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Load Tailwind CSS with Typography plugin --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com?plugins=typography"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Use Inter font --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://rsms.me/inter/inter.css"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Set base font */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Custom styles for the app */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.prompt-box {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f8f9fa;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-left: 4px solid #4f46e5; /* Indigo-600 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Modal styles */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: none; /* Hidden by default */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: fixed;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>z-index: 50;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>left: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>top: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: rgba(0, 0, 0, 0.5); /* Dim background */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-content {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #ffffff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 24px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 90%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 600px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-height: 90vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow-y: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>animation: fadeIn 0.3s ease-out;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Simple fade-in animation */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@keyframes fadeIn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>from {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>opacity: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>transform: scale(0.95);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>to {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>opacity: 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>transform: scale(1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Stat card styles */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.stat-card {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f9fafb; /* gray-50 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid #e5e7eb; /* gray-200 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Badge styles */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.badge {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid #e5e7eb;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.badge-icon {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.badge.locked {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opacity: 0.4;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>filter: grayscale(80%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.badge.unlocked {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-color: #f59e0b; /* amber-500 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #fffbeb; /* amber-50 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Loading spinner */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.spinner {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid #f3f3f3; /* Light grey */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-top: 2px solid #4f46e5; /* Indigo */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 50%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>animation: spin 1s linear infinite;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: inline-block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-right: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@keyframes spin {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>0% { transform: rotate(0deg); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>100% { transform: rotate(360deg); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="bg-gray-100 text-gray-900 antialiased"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Main Container --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container mx-auto max-w-4xl p-4 md:p-8"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Header --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;header class="text-center mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-3xl md:text-4xl font-bold text-indigo-700"&gt;B2 First Writing Practice&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg text-gray-600 mt-2"&gt;Prepare for the Cambridge B2 Writing Exam&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Main Content Area --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="main-content" class="bg-white p-6 md:p-8 rounded-lg shadow-lg"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- Home Screen (Default View) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="home-screen"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Gamification Dashboard --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-2xl font-semibold mb-4 text-center"&gt;My Progress&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="stat-card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="text-sm text-gray-500"&gt;Level&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="level-display" class="text-xl font-bold text-indigo-600"&gt;Level 1: Novice&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="stat-card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="text-sm text-gray-500"&gt;Total Tasks&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="essays-display" class="text-xl font-bold text-indigo-600"&gt;0&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="stat-card col-span-2 md:col-span-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="text-sm text-gray-500"&gt;Practice Streak&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="streak-display" class="text-xl font-bold text-indigo-600"&gt;🔥 0 Days&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-2xl font-semibold mb-4 text-center"&gt;Choose a Part to Practice&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Part 1 Button --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="showTask('part1')" class="group p-6 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition duration-300 transform hover:-translate-y-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold"&gt;Part 1: Essay&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="mt-2 text-indigo-100"&gt;Practice the compulsory opinion essay.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Part 2 Button --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="showTask('part2select-screen')" class="group p-6 bg-gray-700 text-white rounded-lg shadow-md hover:bg-gray-800 transition duration-300 transform hover:-translate-y-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold"&gt;Part 2: Choice Tasks&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="mt-2 text-gray-200"&gt;Practice Articles, Reviews, Reports, &amp; Emails.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mt-8 space-x-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Assessment Criteria Button --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="showModal('assessment-modal')" class="px-6 py-2 bg-white text-indigo-600 border border-indigo-600 rounded-full font-semibold hover:bg-indigo-50 transition duration-300"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>Assessment Criteria</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Badges Button --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="showBadgesModal()" class="px-6 py-2 bg-amber-500 text-white border border-amber-500 rounded-full font-semibold hover:bg-amber-600 transition duration-300"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>My Badges</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- Part 2 Selection Screen --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="part2select-screen" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-center mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl font-semibold"&gt;Part 2: Choose Your Task&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="showTask('home-screen')" class="text-sm text-indigo-600 hover:underline"&gt;&amp;larr; Back to Home&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 sm:grid-cols-2 gap-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="generatePrompt('article')" class="p-4 bg-teal-500 text-white rounded-lg shadow hover:bg-teal-600 transition"&gt;Article&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="generatePrompt('review')" class="p-4 bg-purple-500 text-white rounded-lg shadow hover:bg-purple-600 transition"&gt;Review&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="generatePrompt('report')" class="p-4 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600 transition"&gt;Report&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onclick="generatePrompt('email')" class="p-4 bg-sky-500 text-white rounded-lg shadow hover:bg-sky-600 transition"&gt;Email / Letter&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- Task Practice Screen (for Part 1 and Part 2 tasks) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="task-screen" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="mb-2 sm:mb-0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h2 id="task-title" class="text-2xl font-semibold"&gt;&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button id="back-button" onclick="showTask('home-screen')" class="text-sm text-indigo-600 hover:underline"&gt;&amp;larr; Back&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Timer Display --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div id="timer-display" class="hidden text-2xl font-bold text-red-600 bg-red-100 px-4 py-2 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>40:00</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Prompt Box --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div id="prompt-container" class="prompt-box p-4 rounded-lg mb-6 text-gray-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Prompt will be inserted here --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Helper Buttons --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-wrap gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button id="new-prompt-btn" class="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>New Prompt</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button id="structure-guide-btn" class="px-4 py-2 bg-gray-200 text-gray-800 text-sm font-medium rounded-lg hover:bg-gray-300 transition"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>Structure Guide</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button id="language-guide-btn" class="px-4 py-2 bg-gray-200 text-gray-800 text-sm font-medium rounded-lg hover:bg-gray-300 transition"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>Useful Language</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;!-- Gemini Idea Button (hidden by default) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button id="gemini-idea-btn" class="hidden px-4 py-2 bg-sky-500 text-white text-sm font-medium rounded-lg hover:bg-sky-600 transition"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>✨ Suggest 3rd Idea</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Timed Challenge Checkbox --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;input type="checkbox" id="timer-checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;label for="timer-checkbox" class="ml-2 block text-sm text-gray-900"&gt;Add 40-Minute Timer&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Writing Area --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;textarea id="writing-area" class="w-full h-80 p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="Start writing here... Write at least 140 words and then click 'Log My Practice' to get credit!"&gt;&lt;/textarea&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-col sm:flex-row justify-between items-center mt-2 gap-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Word Count --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="text-gray-600 w-full sm:w-auto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>Word Count: &lt;span id="word-count" class="font-bold"&gt;0&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Action Buttons --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex w-full sm:w-auto gap-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;!-- Gemini Feedback Button --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button id="gemini-feedback-btn" class="w-1/2 sm:w-auto px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow hover:bg-purple-700 transition duration-300 flex items-center justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>✨ Get AI Feedback</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;!-- Log Practice Button --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button id="log-practice-btn" onclick="handleLogPractice()" class="w-1/2 sm:w-auto px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow hover:bg-green-700 transition duration-300"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>Log My Practice</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt; &lt;!-- End main-content --&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt; &lt;!-- End container --&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Modals --&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Assessment Criteria Modal --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="assessment-modal" class="modal" onclick="closeModal('assessment-modal')"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" onclick="event.stopPropagation()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-xl font-semibold"&gt;Assessment Criteria &amp; Key Tips&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('assessment-modal')" class="text-2xl text-gray-500 hover:text-gray-800"&gt;&amp;times;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p class="mb-4"&gt;Your writing is marked on four key criteria (each worth equal marks):&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;ul class="list-disc list-inside space-y-2 mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;Content:&lt;/strong&gt; Did you answer all parts of the question? Did you include all the required information?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;Communicative Achievement:&lt;/strong&gt; Is the style (formal/informal) correct for the task? Is it easy for the reader to understand your ideas?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;Organisation:&lt;/strong&gt; Is the text well-structured? Did you use paragraphs and linking words (e.g., *however, moreover, firstly*) correctly?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;Language:&lt;/strong&gt; Did you use a good range of B2 vocabulary and grammar? How accurate is it?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4 class="text-lg font-semibold mb-2"&gt;Top Tips:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;ul class="list-disc list-inside space-y-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;li&gt;You have &lt;strong&gt;80 minutes&lt;/strong&gt; for both parts (about 40 minutes per task).&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;li&gt;You must write &lt;strong&gt;140-190 words&lt;/strong&gt; for each task.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;Always make a plan!&lt;/strong&gt; Spend 5-10 minutes planning your paragraphs and ideas.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;Check your work!&lt;/strong&gt; Leave 5 minutes to check for grammar, spelling, and punctuation errors.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Structure Guide Modal --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="structure-modal" class="modal" onclick="closeModal('structure-modal')"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" onclick="event.stopPropagation()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 id="structure-modal-title" class="text-xl font-semibold"&gt;Structure Guide&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('structure-modal')" class="text-2xl text-gray-500 hover:text-gray-800"&gt;&amp;times;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="structure-modal-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Content will be injected by JavaScript --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Language Guide Modal --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="language-modal" class="modal" onclick="closeModal('language-modal')"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" onclick="event.stopPropagation()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 id="language-modal-title" class="text-xl font-semibold"&gt;Useful Language&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('language-modal')" class="text-2xl text-gray-500 hover:text-gray-800"&gt;&amp;times;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="language-modal-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Content will be injected by JavaScript --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Badges Modal --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="badges-modal" class="modal" onclick="closeModal('badges-modal')"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" onclick="event.stopPropagation()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 id="badges-modal-title" class="text-xl font-semibold"&gt;My Badges&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('badges-modal')" class="text-2xl text-gray-500 hover:text-gray-800"&gt;&amp;times;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="badges-modal-content" class="grid grid-cols-2 sm:grid-cols-3 gap-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Badges will be injected by JavaScript --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Generic Message Modal --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="message-modal" class="modal" onclick="closeModal('message-modal')"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" onclick="event.stopPropagation()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 id="message-modal-title" class="text-xl font-semibold"&gt;Notification&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('message-modal')" class="text-2xl text-gray-500 hover:text-gray-800"&gt;&amp;times;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p id="message-modal-content"&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onclick="closeModal('message-modal')" class="mt-6 w-full px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>OK</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- AI Feedback Modal --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="feedback-modal" class="modal" onclick="closeModal('feedback-modal')"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" onclick="event.stopPropagation()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 id="feedback-modal-title" class="text-xl font-semibold text-purple-700"&gt;✨ AI Feedback&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('feedback-modal')" class="text-2xl text-gray-500 hover:text-gray-800"&gt;&amp;times;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- `prose` class from Tailwind Typography will style the LLM's Markdown output --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="feedback-modal-content" class="prose max-w-none"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Feedback will be injected here. --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onclick="closeModal('feedback-modal')" class="mt-6 w-full px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>Close</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- JavaScript Logic --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const screens = ['home-screen', 'part2select-screen', 'task-screen'];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let currentTaskType = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let currentPromptData = {}; // Store data for Part 1 idea generation</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let currentWordCount = 0;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Gemini API Key ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// As per instructions, leave apiKey as an empty string.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// It will be populated by the environment.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const apiKey = "";<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- DOM Elements ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const writingArea = document.getElementById('writing-area');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const wordCountEl = document.getElementById('word-count');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const taskTitleEl = document.getElementById('task-title');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const promptContainerEl = document.getElementById('prompt-container');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const backButtonEl = document.getElementById('back-button');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const newPromptBtn = document.getElementById('new-prompt-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const structureGuideBtn = document.getElementById('structure-guide-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const languageGuideBtn = document.getElementById('language-guide-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const geminiIdeaBtn = document.getElementById('gemini-idea-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const geminiFeedbackBtn = document.getElementById('gemini-feedback-btn');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const structureModalTitle = document.getElementById('structure-modal-title');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const structureModalContent = document.getElementById('structure-modal-content');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const languageModalTitle = document.getElementById('language-modal-title');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const languageModalContent = document.getElementById('language-modal-content');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const levelDisplay = document.getElementById('level-display');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const essaysDisplay = document.getElementById('essays-display');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const streakDisplay = document.getElementById('streak-display');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const timerCheckbox = document.getElementById('timer-checkbox');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const timerDisplay = document.getElementById('timer-display');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const badgesModalContent = document.getElementById('badges-modal-content');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const messageModalTitle = document.getElementById('message-modal-title');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const messageModalContent = document.getElementById('message-modal-content');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const feedbackModalContent = document.getElementById('feedback-modal-content');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Gamification State ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let userStats = {};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let timerInterval = null;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const levels = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ name: "Novice", tasks: 0 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ name: "Apprentice", tasks: 3 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ name: "Scribe", tasks: 7 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ name: "Author", tasks: 15 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ name: "Master", tasks: 30 }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const allBadges = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>firstTask: { name: "First Step", icon: "✍️", desc: "Complete your first writing task." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>streak3: { name: "On Fire!", icon: "🔥", desc: "Maintain a 3-day practice streak." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>streak7: { name: "Dedicated", icon: "🌟", desc: "Maintain a 7-day practice streak." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>task5: { name: "Getting Serious", icon: "📚", desc: "Complete 5 tasks." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>task10: { name: "Prolific Writer", icon: "🖋️", desc: "Complete 10 tasks." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>versatile: { name: "Versatile", icon: "🎨", desc: "Try every Part 2 task type (Article, Review, Report, Email)." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>part1Specialist: { name: "Essayist", icon: "🧐", desc: "Complete 5 Part 1 Essays." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>timedChallenge: { name: "Beat the Clock", icon: "⏱️", desc: "Complete a timed challenge." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>wordPerfect: { name: "Word Perfect", icon: "🎯", desc: "Log a task with 140-190 words." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>aiFeedback: { name: "AI Assisted", icon: "🤖", desc: "Use the AI Feedback feature." },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Prompt Data (Same as before) ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const prompts = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>part1: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>topic: "education",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>question: "All students should be required to learn a foreign language in school. Do you agree?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea1: "communication",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea2: "job opportunities",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>topic: "the environment",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>question: "Is it more important to protect natural landscapes or to build new houses for a growing population?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea1: "wildlife",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea2: "the economy",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>topic: "technology",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>question: "Do people spend too much time on their mobile phones?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea1: "social life",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea2: "access to information",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>topic: "work and life",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>question: "Is it better to earn a lot of money or to enjoy your job?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea1: "personal happiness",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea2: "lifestyle",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>topic: "health and fitness",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>question: "Should governments spend more money on sports facilities or on libraries?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea1: "public health",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>idea2: "education",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>article: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"Your college magazine is looking for articles about festivals in your country. Write an article describing a festival you have attended and explaining why it is popular.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"You see this announcement in an English-language magazine: 'We're looking for articles about the most useful thing you've ever learned. Write us an article explaining what you learned, how you learned it, and why it is so useful.'",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"Write an article for a travel website about a place you have visited recently. Describe the place and explain why you would (or would not) recommend it to other travellers.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"A technology website has asked for articles about how technology has changed the way we study. Write an article explaining the changes and giving your opinion on them."</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>review: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"You see this notice on a film review website: 'We want reviews of films that are based on books. Write a review of a film based on a book, explaining its good and bad points and saying whether you think it was better than the book.'",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"A local entertainment guide has asked for reviews of a new restaurant or café in your area. Write a review describing the food, service, and atmosphere, and say whether you would recommend it.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"Your college website is looking for reviews of useful apps for students. Write a review of an app you use, explaining what it does and why other students might find it useful.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"You see this in a music magazine: 'Write a review of a concert or music festival you have been to recently. Tell us about the performance and the atmosphere.'"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>report: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"Your English class recently went on a trip to a local museum. Your teacher has asked you to write a report on the trip. In your report, you should describe what you saw, explain what you learned, and make a recommendation for future school trips.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"The college where you study wants to improve its sports facilities. The college principal has asked students to write a report on the current facilities. Describe the current facilities, outline their problems, and recommend improvements.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"You work for a local company. Your manager has asked you to write a report on transport options for employees getting to the new office. Your report should compare two types of transport and recommend the best one.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"A local town council is planning to hold a new festival to attract tourists. They have asked for reports from residents with suggestions. Write a report describing a type of festival that would be popular and explaining how it would benefit the town."</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>email: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"You have just returned from a holiday in another country and you left a small bag in your hotel room. Write an email to the hotel manager. In your email, you should: \n- describe the bag and where you left it\n- explain its contents\n- ask the manager to send it to you.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"Your English-speaking friend, Alex, is planning to visit your town for a week. Write an email to Alex. In your email, you should: \n- welcome your friend\n- suggest some things to do and see\n- offer to meet them.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"You saw an advertisement for a summer job working at a music festival in the UK. Write a letter of application to the festival organiser, Mr. Jones. You should: \n- explain why you are writing\n- describe your relevant skills and experience\n- say when you are available for an interview.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"You recently bought a new laptop online, but when it arrived, it was damaged. Write an email to the company's customer service department. In your email, you must: \n- explain what you bought and when\n- describe the problem with the laptop\n- state what action you want the company to take (e.g., a refund or replacement)."</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Structure &amp; Language Data (Same as before) ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const guides = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>part1: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>structure: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Essay Structure (5 Paragraphs)&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside space-y-2'&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 1: Introduction&lt;/strong&gt;&lt;br&gt;Introduce the topic with a general statement. State your opinion or the main point of your essay (your thesis).&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 2: Discuss Idea 1&lt;/strong&gt;&lt;br&gt;Discuss the first given note. Give reasons and examples to support your point.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 3: Discuss Idea 2&lt;/strong&gt;&lt;br&gt;Discuss the second given note. Give reasons and examples.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 4: Your Own Idea&lt;/strong&gt;&lt;br&gt;Introduce and discuss your own third idea, linking it to the topic.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 5: Conclusion&lt;/strong&gt;&lt;br&gt;Summarise your main points and restate your opinion in different words.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>language: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Giving Opinions&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;In my opinion, ...&lt;/li&gt;&lt;li&gt;I firmly believe that...&lt;/li&gt;&lt;li&gt;It seems to me that...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Introducing Points&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;Firstly, ... / Secondly, ... / Finally, ...&lt;/li&gt;&lt;li&gt;To begin with, ...&lt;/li&gt;&lt;li&gt;One major advantage of... is...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Adding Ideas&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;Moreover, ...&lt;/li&gt;&lt;li&gt;Furthermore, ...&lt;/li&gt;&lt;li&gt;In addition to this, ...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Contrasting Ideas&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;On the other hand, ...&lt;/li&gt;&lt;li&gt;However, ...&lt;/li&gt;&lt;li&gt;Although... , ...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Concluding&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;In conclusion, ...&lt;/li&gt;&lt;li&gt;To sum up, ...&lt;/li&gt;&lt;li&gt;On balance, I feel that...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>article: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>structure: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Article Structure&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside space-y-2'&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Title:&lt;/strong&gt; Needs to be catchy and interesting to grab the reader's attention.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 1: Introduction&lt;/strong&gt;&lt;br&gt;Introduce the topic in an engaging way. You could ask a rhetorical question.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 2 &amp; 3: Main Body&lt;/strong&gt;&lt;br&gt;Develop the main points of your article. Give examples, descriptions, or anecdotes.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 4: Conclusion&lt;/strong&gt;&lt;br&gt;Give a final comment or your opinion to round off the article. You could end with a question to the reader.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>language: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Grabbing Attention&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;Have you ever wondered...?&lt;/li&gt;&lt;li&gt;It's a common belief that...&lt;/li&gt;&lt;li&gt;What would you do if...?&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Giving Opinions&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;What I love most is...&lt;/li&gt;&lt;li&gt;It's clear to me that...&lt;/li&gt;&lt;li&gt;Don't miss the chance to...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Engaging the Reader&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;Believe it or not, ...&lt;/li&gt;&lt;li&gt;As you can imagine, ...&lt;/li&gt;&lt;li&gt;So, what are you waiting for?&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>review: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>structure: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Review Structure&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside space-y-2'&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Title:&lt;/strong&gt; Give your review a title (it can be the name of the thing you're reviewing).&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 1: Introduction&lt;/strong&gt;&lt;br&gt;State what you are reviewing (e.g., name of film, book, restaurant) and give a brief, general opinion.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 2: Main Body (e.g., Positives)&lt;/strong&gt;&lt;br&gt;Describe the positive aspects. Use specific examples and descriptive language.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 3: Main Body (e.g., Negatives)&lt;/strong&gt;&lt;br&gt;Describe any negative aspects or weaknesses.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 4: Conclusion &amp; Recommendation&lt;/strong&gt;&lt;br&gt;Summarise your opinion and make a clear recommendation (e.g., "I would highly recommend...", "This is a must-see for...", "I would give this a miss...").&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>language: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Descriptive Adjectives&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;(Food) delicious, bland, spicy, fresh&lt;/li&gt;&lt;li&gt;(Film) thrilling, moving, predictable, hilarious&lt;/li&gt;&lt;li&gt;(Atmosphere) lively, cosy, welcoming, noisy&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Giving Opinions&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;What I liked/disliked most was...&lt;/li&gt;&lt;li&gt;I was particularly impressed by...&lt;/li&gt;&lt;li&gt;I was disappointed by...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Recommending&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;I would highly recommend...&lt;/li&gt;&lt;li&gt;This is a must-see/must-read!&lt;/li&gt;&lt;li&gt;Overall, I would (not) suggest...&lt;/li&gt;&lt;li&gt;If you're a fan of..., you'll love this.&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>report: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>structure: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Report Structure&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside space-y-2'&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Title:&lt;/strong&gt; e.g., "Report on College Sports Facilities"&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Introduction:&lt;/strong&gt; State the aim of the report (e.g., "The aim of this report is to...").&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Section 1 (with Heading):&lt;/strong&gt;&lt;br&gt;e.g., "Current Facilities". Describe the current situation. Use formal, factual language.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Section 2 (with Heading):&lt;/strong&gt;&lt;br&gt;e.g., "Problems" or "Student Feedback". Outline the issues or findings.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Conclusion/Recommendations:&lt;/strong&gt;&lt;br&gt;Summarise your findings and make one or more recommendations (e.g., "I would recommend that...", "It is suggested that...").&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class='mt-2 text-sm'&gt;&lt;strong&gt;Note:&lt;/strong&gt; The style must be formal and impersonal. Avoid using "I think...". Use headings for your sections.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>language: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Introduction&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;The aim/purpose of this report is to...&lt;/li&gt;&lt;li&gt;This report outlines/describes...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Reporting Findings&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;It was found that...&lt;/li&gt;&lt;li&gt;Many students mentioned that...&lt;/li&gt;&lt;li&gt;A common complaint was...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Making Recommendations&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;I would (strongly) recommend that...&lt;/li&gt;&lt;li&gt;It is suggested that...&lt;/li&gt;&lt;li&gt;One solution would be to...&lt;/li&gt;&lt;li&gt;Improvements could be made by...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>email: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>structure: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Email/Letter Structure&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class='mb-2'&gt;The structure depends on whether it's &lt;strong&gt;formal&lt;/strong&gt; (e.g., a job application, a complaint) or &lt;strong&gt;informal&lt;/strong&gt; (e.g., to a friend).&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h5 class='font-semibold mt-4 mb-1'&gt;Formal&lt;/h5&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside space-y-1'&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Greeting:&lt;/strong&gt; Dear Sir or Madam, / Dear Mr. Jones,&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 1:&lt;/strong&gt; State your reason for writing (e.g., "I am writing to apply for...", "I am writing to complain about...").&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 2/3:&lt;/strong&gt; Give the main details, requests, or information.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 4:&lt;/strong&gt; State what action you expect (e.g., "I look forward to hearing from you.").&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Sign-off:&lt;/strong&gt; Yours faithfully, (if 'Dear Sir/Madam') / Yours sincerely, (if 'Dear Mr. Jones,')&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Full Name:&lt;/strong&gt; (Your Full Name)&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h5 class='font-semibold mt-4 mb-1'&gt;Informal&lt;/h5&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside space-y-1'&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Greeting:&lt;/strong&gt; Hi Alex, / Dear Alex,&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 1:&lt;/strong&gt; Opening (e.g., "How are you?", "It was great to hear from you...").&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li class="break-words"&gt;&lt;strong&gt;Paragraph 2/3:&lt;/strong&gt; Main message (giving news, answering questions, making suggestions).&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Paragraph 4:&lt;/strong&gt; Closing (e.g., "Write back soon!", "Hope to see you soon!").&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;Sign-off:&lt;/strong&gt; Best wishes, / All the best, / Regards,&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;First Name:&lt;/strong&gt; (Your First Name)&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>language: `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mb-2'&gt;Formal Openings&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;I am writing to enquire about...&lt;/li&gt;&lt;li&gt;I am writing in response to...&lt;/li&gt;&lt;li&gt;I wish to complain about...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Formal Closings&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;I look forward to receiving your reply.&lt;/li&gt;&lt;li&gt;Thank you for your assistance.&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Informal Openings&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;How's it going?&lt;/li&gt;&lt;li&gt;Thanks for your email.&lt;/li&gt;&lt;li&gt;Sorry I haven't written for ages...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class='font-semibold mt-4 mb-2'&gt;Informal Suggestions&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ul class='list-disc list-inside'&gt;&lt;li&gt;Why don't we...?&lt;/li&gt;&lt;li&gt;How about...?&lt;/li&gt;&lt;li&gt;You should definitely...&lt;/li&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Event Listeners ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', loadUserStats);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Word Count</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>writingArea.addEventListener('input', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const text = writingArea.value.trim();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentWordCount = text.split(/\s+/).filter(word =&gt; word.length &gt; 0).length;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>wordCountEl.textContent = currentWordCount;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Change color if over/under word count</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (currentWordCount &gt; 190 || (currentWordCount &gt; 0 &amp;&amp; currentWordCount &lt; 140)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>wordCountEl.classList.add('text-red-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>wordCountEl.classList.remove('text-gray-600', 'text-green-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else if (currentWordCount &gt;= 140 &amp;&amp; currentWordCount &lt;= 190) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>wordCountEl.classList.add('text-green-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>wordCountEl.classList.remove('text-gray-600', 'text-red-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>wordCountEl.classList.add('text-gray-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>wordCountEl.classList.remove('text-green-600', 'text-red-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (text.length === 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>wordCountEl.textContent = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Helper button listeners</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>newPromptBtn.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>generatePrompt(currentTaskType);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>structureGuideBtn.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showModal('structure-modal');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>languageGuideBtn.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showModal('language-modal');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Gemini Button Listeners ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>geminiIdeaBtn.addEventListener('click', handleAIIdea);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>geminiFeedbackBtn.addEventListener('click', handleAIFeedback);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Stats &amp; Gamification Functions ---</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function getFormattedDate(date) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return date.toISOString().split('T')[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function loadUserStats() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const stats = localStorage.getItem('b2WriterStats');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (stats) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>userStats = JSON.parse(stats);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Ensure new properties exist</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (!userStats.tasksDone) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>userStats.tasksDone = { part1: 0, article: 0, review: 0, report: 0, email: 0 };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (!userStats.badges) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>userStats.badges = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Default stats</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>userStats = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>level: 1,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>tasks: 0,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>streak: 0,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>lastPractice: null,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>badges: [],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>tasksDone: { part1: 0, article: 0, review: 0, report: 0, email: 0 }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>checkStreakOnLoad();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>updateDashboard();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function saveUserStats() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>localStorage.setItem('b2WriterStats', JSON.stringify(userStats));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function updateDashboard() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const currentLevel = levels.filter(l =&gt; l.tasks &lt;= userStats.tasks).pop() || levels[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>userStats.level = levels.indexOf(currentLevel) + 1;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>levelDisplay.textContent = `Level ${userStats.level}: ${currentLevel.name}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>essaysDisplay.textContent = userStats.tasks;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>streakDisplay.textContent = `🔥 ${userStats.streak} Day${userStats.streak === 1 ? '' : 's'}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function checkStreakOnLoad() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!userStats.lastPractice) return; // No practice yet</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const today = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const yesterday = new Date(today);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>yesterday.setDate(yesterday.getDate() - 1);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const lastPracticeDate = new Date(userStats.lastPractice);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (getFormattedDate(lastPracticeDate) !== getFormattedDate(today) &amp;&amp;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>getFormattedDate(lastPracticeDate) !== getFormattedDate(yesterday)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>userStats.streak = 0; // Streak is broken</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>saveUserStats();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function handleLogPractice() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>stopTimer(); // Stop timer if it's running</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (currentWordCount &lt; 140) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showMessageModal("Almost there!", "You need to write at least 140 words to log your practice and get credit.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// --- Update Stats ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>userStats.tasks += 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>userStats.tasksDone[currentTaskType] = (userStats.tasksDone[currentTaskType] || 0) + 1;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// --- Update Streak ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const today = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const yesterday = new Date(today);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>yesterday.setDate(yesterday.getDate() - 1);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const lastPracticeDate = userStats.lastPractice ? new Date(userStats.lastPractice) : null;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!lastPracticeDate || getFormattedDate(lastPracticeDate) !== getFormattedDate(today)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (lastPracticeDate &amp;&amp; getFormattedDate(lastPracticeDate) === getFormattedDate(yesterday)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>userStats.streak += 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>userStats.streak = 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>userStats.lastPractice = getFormattedDate(today);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// --- Check for Badges ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let newBadges = checkBadgesOnLog(currentWordCount);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// --- Save &amp; Update ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>saveUserStats();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>updateDashboard();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// --- Show Success Message ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let message = `Great job! You've completed the task and logged your practice. Total tasks: ${userStats.tasks}.`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (newBadges.length &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>message += `\n\nYou also unlocked ${newBadges.length} new badge(s)! Check "My Badges" to see them.`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showNewBadgeMessage(newBadges);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showMessageModal("Practice Logged!", message);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Clear writing area and get new prompt</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>writingArea.value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>wordCountEl.textContent = '0';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>wordCountEl.classList.add('text-gray-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>wordCountEl.classList.remove('text-green-600', 'text-red-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>generatePrompt(currentTaskType); // Load a new prompt</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function checkBadgesOnLog(wordCount) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let newBadgesEarned = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const wasTimed = timerCheckbox.checked;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const conditions = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>firstTask: () =&gt; userStats.tasks === 1,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>streak3: () =&gt; userStats.streak &gt;= 3,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>streak7: () =&gt; userStats.streak &gt;= 7,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>task5: () =&gt; userStats.tasks === 5,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>task10: () =&gt; userStats.tasks === 10,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>versatile: () =&gt; userStats.tasksDone.article &gt; 0 &amp;&amp; userStats.tasksDone.review &gt; 0 &amp;&amp; userStats.tasksDone.report &gt; 0 &amp;&amp; userStats.tasksDone.email &gt; 0,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>part1Specialist: () =&gt; userStats.tasksDone.part1 === 5,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>timedChallenge: () =&gt; wasTimed,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>wordPerfect: () =&gt; wordCount &gt;= 140 &amp;&amp; wordCount &lt;= 190,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>aiFeedback: () =&gt; userStats.badges.includes('aiFeedback') // This is checked elsewhere, but good to have</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>for (const badgeId in allBadges) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (!userStats.badges.includes(badgeId) &amp;&amp; conditions[badgeId] &amp;&amp; typeof conditions[badgeId] === 'function') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if(conditions[badgeId]()) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>userStats.badges.push(badgeId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>newBadgesEarned.push(allBadges[badgeId]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return newBadgesEarned;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function showBadgesModal() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>badgesModalContent.innerHTML = ''; // Clear old content</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>for (const badgeId in allBadges) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const badge = allBadges[badgeId];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const isUnlocked = userStats.badges.includes(badgeId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const badgeClass = isUnlocked ? 'badge unlocked' : 'badge locked';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>badgesModalContent.innerHTML += `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="${badgeClass}"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="badge-icon"&gt;${badge.icon}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="font-semibold mt-2"&gt;${badge.name}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="text-sm text-gray-600"&gt;${badge.desc}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showModal('badges-modal');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Core Functions ---</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Show the correct screen</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function showTask(screenId) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>stopTimer(); // Stop timer whenever we leave the task screen</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>screens.forEach(id =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById(id).classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (screenId === 'part1') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>generatePrompt('part1');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const screenToShow = document.getElementById(screenId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (screenToShow) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>screenToShow.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>console.error(`Screen with ID ${screenId} not found.`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if(screenId === 'home-screen') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>updateDashboard(); // Refresh dashboard when returning home</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Clear writing area when changing tasks</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>writingArea.value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>wordCountEl.textContent = '0';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentWordCount = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>wordCountEl.classList.add('text-gray-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>wordCountEl.classList.remove('text-green-600', 'text-red-600');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Generate a new prompt</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function generatePrompt(taskType) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentTaskType = taskType;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let promptData;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let promptHTML = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentPromptData = {}; // Clear previous prompt data</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (taskType === 'part1') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>promptData = prompts.part1[Math.floor(Math.random() * prompts.part1.length)];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>currentPromptData = promptData; // Save for AI idea generation</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>promptHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="mb-2"&gt;In your English class, you have been discussing &lt;strong&gt;${promptData.topic}&lt;/strong&gt;. Now your English teacher has asked you to write an essay.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="mb-4"&gt;Write an essay using &lt;strong&gt;all the notes&lt;/strong&gt; and giving reasons for your point of view.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-lg mb-2"&gt;"${promptData.question}"&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;strong class="block"&gt;Notes&lt;/strong&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;strong class="block"&gt;Write about:&lt;/strong&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;ol class="list-decimal list-inside ml-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;${promptData.idea1}&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;${promptData.idea2}&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;li&gt;&lt;strong&gt;your own idea&lt;/strong&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/ol&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>taskTitleEl.textContent = 'Part 1: Essay';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>backButtonEl.setAttribute('onclick', "showTask('home-screen')");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>backButtonEl.innerHTML = '&amp;larr; Back to Home';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>geminiIdeaBtn.classList.remove('hidden'); // Show the "Suggest Idea" button</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>promptData = prompts[taskType][Math.floor(Math.random() * prompts[taskType].length)];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>promptHTML = `&lt;p&gt;${promptData.replace(/\n/g, '&lt;br&gt;')}&lt;/p&gt;`; // Handle newlines</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const title = taskType.charAt(0).toUpperCase() + taskType.slice(1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>taskTitleEl.textContent = `Part 2: ${title}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>backButtonEl.setAttribute('onclick', "showTask('part2select-screen')");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>backButtonEl.innerHTML = '&amp;larr; Back to Task Selection';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>geminiIdeaBtn.classList.add('hidden'); // Hide the "Suggest Idea" button</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>promptContainerEl.innerHTML = promptHTML;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>updateHelperContent(taskType);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Handle timer logic</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>stopTimer(); // Stop any existing timer</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>timerCheckbox.checked = false; // Reset checkbox</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showTask('task-screen'); // Ensure the task screen is visible</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Update modal content for the current task</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function updateHelperContent(taskType) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const guide = guides[taskType] || guides['part1'];<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>structureModalTitle.textContent = `Structure Guide: ${taskTitleEl.textContent}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>structureModalContent.innerHTML = guide.structure;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>languageModalTitle.textContent = `Useful Language: ${taskTitleEl.textContent}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>languageModalContent.innerHTML = guide.language;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Timer Functions ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>timerCheckbox.addEventListener('change', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (timerCheckbox.checked) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>startTimer();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>stopTimer();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function startTimer() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>stopTimer(); // Clear any existing timer</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>timerDisplay.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let timeRemaining = 40 * 60; // 40 minutes in seconds</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const updateTimerDisplay = () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const minutes = Math.floor(timeRemaining / 60);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const seconds = timeRemaining % 60;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>updateTimerDisplay();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>timerInterval = setInterval(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>timeRemaining--;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>updateTimerDisplay();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (timeRemaining &lt;= 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>stopTimer();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>timerDisplay.textContent = "00:00";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>showMessageModal("Time's Up!", "Your 40-minute challenge is complete. Remember to 'Log Your Practice'!");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}, 1000);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function stopTimer() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>clearInterval(timerInterval);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>timerInterval = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>timerDisplay.classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Modal Controls ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function showModal(modalId) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById(modalId).style.display = 'flex';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function closeModal(modalId) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById(modalId).style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function showMessageModal(title, message) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>messageModalTitle.textContent = title;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>messageModalContent.textContent = message;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showModal('message-modal');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function showNewBadgeMessage(newBadges) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const badgeNames = newBadges.map(b =&gt; b.name).join(', ');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showMessageModal(</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>"Badge(s) Unlocked!",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`Congratulations! You've earned the following new badge(s): ${badgeNames}. Keep up the great work!`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Close modal if clicking outside the content</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>window.onclick = function(event) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (event.target.classList.contains('modal')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>event.target.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- Gemini API Functions ---</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* Sets the loading state for a Gemini button</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* @param {HTMLButtonElement} button - The button element</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* @param {boolean} isLoading - Whether to show loading state</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* @param {string} defaultText - The default text to restore</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function setButtonLoading(button, isLoading, defaultText) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (isLoading) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>button.disabled = true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>button.innerHTML = `&lt;span class="spinner"&gt;&lt;/span&gt;Analyzing...`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if(button.id === 'gemini-idea-btn') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>button.innerHTML = `&lt;span class="spinner"&gt;&lt;/span&gt;Thinking...`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>button.disabled = false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>button.innerHTML = defaultText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* Call the Gemini API with exponential backoff</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* @param {string} userQuery - The user's prompt</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* @param {string} systemPrompt - The system instruction</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* @param {number} retries - Number of retries</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* @param {number} delay - Delay in ms</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* @returns {Promise&lt;string&gt;} - The generated text</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>async function callGeminiApi(userQuery, systemPrompt = null, retries = 3, delay = 1000) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const payload = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>contents: [{ parts: [{ text: userQuery }] }],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (systemPrompt) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>payload.systemInstruction = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>parts: [{ text: systemPrompt }]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const response = await fetch(apiUrl, {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>method: 'POST',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>headers: { 'Content-Type': 'application/json' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>body: JSON.stringify(payload)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (!response.ok) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (response.status === 429 &amp;&amp; retries &gt; 0) { // Throttling</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>await new Promise(res =&gt; setTimeout(res, delay));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>return callGeminiApi(userQuery, systemPrompt, retries - 1, delay * 2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>throw new Error(`API Error: ${response.statusText}`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const result = await response.json();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (result.candidates &amp;&amp; result.candidates[0].content &amp;&amp; result.candidates[0].content.parts[0].text) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>return result.candidates[0].content.parts[0].text;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>throw new Error("Invalid response structure from API.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} catch (error) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (retries &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>await new Promise(res =&gt; setTimeout(res, delay));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>return callGeminiApi(userQuery, systemPrompt, retries - 1, delay * 2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>console.error("Error calling Gemini API:", error);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>throw error; // Re-throw after retries are exhausted</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* Handles the "Suggest 3rd Idea" button click</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>async function handleAIIdea() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const { question, idea1, idea2 } = currentPromptData;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const systemPrompt = `You are a B2 English tutor. A student has this essay prompt: "${question}" with the two ideas "${idea1}" and "${idea2}". Suggest *one* simple, third idea they could write about. State the idea in 5 words or less (e.g., 'cost to the government' or 'impact on mental health'). Do not say anything else.`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const userQuery = "Suggest the third idea.";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setButtonLoading(geminiIdeaBtn, true, "✨ Suggest 3rd Idea");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const idea = await callGeminiApi(userQuery, systemPrompt);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showMessageModal("✨ Here's an idea:", `How about: "${idea}"`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} catch (error) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showMessageModal("Error", "Sorry, I couldn't connect to the AI. Please try again.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} finally {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>setButtonLoading(geminiIdeaBtn, false, "✨ Suggest 3rd Idea");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/**</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>* Handles the "Get AI Feedback" button click</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span>*/</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>async function handleAIFeedback() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (currentWordCount &lt; 50) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showMessageModal("Not enough text", "Please write at least 50 words to get useful feedback.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const essayText = writingArea.value;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const promptText = promptContainerEl.innerText;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const systemPrompt = `You are an encouraging Cambridge B2 English exam marker. A student has written the following essay in response to a prompt. Provide concise feedback (max 150 words) based on the four official criteria:</span></p>
+<p class="p1"><span class="s1">1.<span class="Apple-converted-space">  </span>**Content:** Did they answer all parts of the prompt? (The prompt was: ${promptText})</span></p>
+<p class="p1"><span class="s1">2.<span class="Apple-converted-space">  </span>**Communicative Achievement:** Is the style (e.g., formal for an essay) appropriate?</span></p>
+<p class="p1"><span class="s1">3.<span class="Apple-converted-space">  </span>**Organisation:** Is it well-structured?</span></p>
+<p class="p1"><span class="s1">4.<span class="Apple-converted-space">  </span>**Language:** Give *one* example of good B2-level vocabulary or grammar they used, and *one* specific error with a correction.</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Format your response using simple Markdown (e.g., **Heading**, * list item). Be very encouraging and start with "Great effort!".`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const userQuery = `Here is the student's essay:\n\n${essayText}`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setButtonLoading(geminiFeedbackBtn, true, "✨ Get AI Feedback");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const feedback = await callGeminiApi(userQuery, systemPrompt);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// The 'prose' class will auto-style the Markdown from the LLM</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>feedbackModalContent.innerHTML = feedback</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>.replace(/\n/g, '&lt;br&gt;') // Basic newline handling</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>.replace(/\*\*(.*?)\*\*/g, '&lt;strong&gt;$1&lt;/strong&gt;') // Bold</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>.replace(/\* (.*?)(&lt;br&gt;|$)/g, '&lt;li class="ml-4 list-disc"&gt;$1&lt;/li&gt;'); // List items</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showModal('feedback-modal');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Add AI Feedback badge if not already earned</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (!userStats.badges.includes('aiFeedback')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>userStats.badges.push('aiFeedback');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>saveUserStats();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>// Show a non-blocking message for the new badge</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                         </span>showMessageModal(</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>"Badge Unlocked!",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>`You've earned the "AI Assisted" badge! 🤖`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}, 1000); // Show after 1 sec to not conflict with feedback modal</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} catch (error) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showMessageModal("Error", "Sorry, I couldn't get AI feedback. Please try again.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} finally {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>setButtonLoading(geminiFeedbackBtn, false, "✨ Get AI Feedback");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>
